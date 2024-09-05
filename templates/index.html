@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Scooter Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>EV Scooter Recommendation</h1>
+    <form action="/predict" method="post">
+        <label for="price">Price (INR):</label>
+        <input type="number" id="price" name="price" step="any" required><br><br>
+        
+        <label for="range">Range (km):</label>
+        <input type="number" id="range" name="range" step="any" required><br><br>
+        
+        <label for="battery_capacity">Battery Capacity (kWh):</label>
+        <input type="number" id="battery_capacity" name="battery_capacity" step="any" required><br><br>
+        
+        <label for="top_speed">Top Speed (km/h):</label>
+        <input type="number" id="top_speed" name="top_speed" step="any" required><br><br>
+        
+        <input type="submit" value="Get Recommendation">
+    </form>
+
+    {% if prediction %}
+        <h2>Recommended EV Scooter: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
