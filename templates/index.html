@@ -4,28 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EV Scooter Recommendation</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0908; /* Outside form background color */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #eae0d5; /* Form background color */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #0a0908; /* Dark text color */
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #0a0908; /* Label text color */
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #0a0908;
+            border-radius: 4px;
+            background-color: #fff; /* Input field background color */
+            color: #0a0908; /* Input text color */
+        }
+
+        .btn-submit {
+            background-color: #0a0908; /* Button background color */
+            color: #eae0d5; /* Button text color */
+            padding: 10px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #3d405b; /* Button hover color (dark gray) */
+        }
+
+        .result {
+            background-color: #eae0d5; /* Result box background color */
+            border: 1px solid #0a0908;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 4px;
+            color: #0a0908; /* Result text color */
+        }
+
+        .result p {
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
     <h1>EV Scooter Recommendation</h1>
-    <form action="/predict" method="post">
+
+    <form action="/predict" method="POST">
         <label for="price">Price (INR):</label>
-        <input type="number" id="price" name="price" step="any" required><br><br>
-        
-        <label for="range">Range (km):</label>
-        <input type="number" id="range" name="range" step="any" required><br><br>
-        
+        <input type="number" id="price" name="price" required>
+
+        <label for="range">Range (Km):</label>
+        <input type="number" id="range" name="range" required>
+
         <label for="battery_capacity">Battery Capacity (kWh):</label>
-        <input type="number" id="battery_capacity" name="battery_capacity" step="any" required><br><br>
-        
-        <label for="top_speed">Top Speed (km/h):</label>
-        <input type="number" id="top_speed" name="top_speed" step="any" required><br><br>
-        
-        <input type="submit" value="Get Recommendation">
+        <input type="number" id="battery_capacity" name="battery_capacity" step="0.1" required>
+
+        <label for="top_speed">Top Speed (Km/h):</label>
+        <input type="number" id="top_speed" name="top_speed" required>
+
+        <button type="submit" class="btn-submit">Get Recommendation</button>
     </form>
 
-    {% if prediction %}
-        <h2>Recommended EV Scooter: {{ prediction }}</h2>
-    {% endif %}
+    <div class="result">
+        {% if prediction %}
+        <p>Recommended EV Scooter: <strong>{{ prediction }}</strong></p>
+        {% else %}
+        <p>Fill out the form to get a recommendation!</p>
+        {% endif %}
+    </div>
+</div>
+
 </body>
 </html>
