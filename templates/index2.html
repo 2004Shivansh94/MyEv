@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>BIKESETU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+    <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">BIKESETU</a></div>
+        <div class="dropdown">
+          <button class="locationbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Location
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Mumbai</a></li>
+            <li><a class="dropdown-item" href="#">Delhi</a></li>
+            <li><a class="dropdown-item" href="#">Bangalore</a></li>
+            <li><a class="dropdown-item" href="#">Chennai</a></li>
+            <li><a class="dropdown-item" href="#">Kolkata</a></li>
+            <li><a class="dropdown-item" href="#">Hyderabad</a></li>
+          </ul>
+          
+        </div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+         
+          <li><a href="">Whatsapp</a></li>
+        </ul>
+      </div>
+      <div class="off-screen-menu">
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+  
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      
+  
+      <script src="./app.js"></script>
+    </nav>
+
+
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle"></p>
+          <h1 class="title">
+          BEST DEALS<span><br />ON</span> ELECTRIC SCOOTERS
+          </h1>
+          
+          <div class="action__btns">
+            <a href="https://www.linkedin.com/in/kushagragaur/"><button class="hire__me">Track</button></a>
+            <a href="http://127.0.0.1:5000/"><button class="portfolio">AI-Recommendation</button></a>
+          </div>
+        </div>
+        <div class="image">
+          <img src="images/img main.png" alt="profile" />
+        </div>
+      </div>
+    </section>
+    <script>
+// Script to open and close sidebar
+function W3_open () {
+document.getElementById("mySidebar").style.display = "block";
+document.getElementById("myOverlay").style.display = "block";
+}
+function w3_close() {
+document.getElementById("mySidebar").style.display = "none";
+document.getElementById("myOverlay").style.display = "none";
+}
+// Modal Image Gallery
+function onClick(element) {
+document.getElementById("img01" ).src = element.src;
+document.getElementById ("moda101").style.display = "block";
+var captionText = document.getElementById ("caption");
+captionText. innerHTML = element.alt;
+}
+</script>
+<script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/c7f58fb3-2b4f-40d1-bb28-ed710cb9f64f/webchat/v2.1/config.js"></script>
+  </body>
+</html>

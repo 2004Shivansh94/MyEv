@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #2d2c2c;
+  --primary-color-dark: #000000;
+  --secondary-color: #757474;
+  --text-dark: #ffffff;
+  --text-light: #8e8e8e;
+  --extra-light: #000000;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.locationbtn {
+    margin-left: 50px;
+    background-color: black; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove borders */
+    padding: 10px 20px; /* Padding for size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underlines */
+    display: inline-block; /* Align with other inline elements */
+    font-size: 16px; /* Font size */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    outline: none; /* Remove outline */
+  }
+  
+  .locationbtn:hover {
+    background-color: #45a049; /* Slightly darker green */
+    transform: scale(1.05); /* Scale up on hover */
+  }
+  
+  .locationbtn:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15); /* Shadow effect when clicked */
+    transform: scale(1); /* Reset scale when clicked */
+  }
+  
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin-left: 100px;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content:baseline;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--extra-light);
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.section {
+  background-color: var(--extra-light);
+}
+
+.section__container {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action__btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.action__btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hire__me {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.hire__me:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.portfolio {
+  color: var(--primary-color);
+}
+
+.portfolio:hover {
+  background-color: var(--primary-color-dark);
+  color: #ffffff;
+}
+
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: min(25rem, 90%);
+  border-radius: 100%;
+}
+
+@media (width < 750px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 85px);
+    left: -100%;
+    top: 85px;
+    background-color: var(--extra-light);
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.25rem;
+  }
+
+  .section__container {
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+
+  .action__btns {
+    margin: auto;
+  }
+}
+
+/* ======================================= new css for hover =======================================*/
+
+.off-screen-menu {
+    position: fixed;
+    top: 13.5%;
+    right: -250px; /* Initially hidden off-screen */
+    width: 250px; /* Set the width of the menu */
+    height: 100%; /* Full height */
+    background-color: #333; /* Background color of the menu */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    transition: right 0.3s ease; /* Smooth transition when menu slides in */
+    display: flex;
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center; /* Center align items horizontally */
+    padding: 20px; /* Padding around the content */
+  }
+  
+  .off-screen-menu.active {
+    top: 13.5%;
+    right: 0; /* Menu visible when active */
+  }
+  
+  .off-screen-menu ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Full width of the menu */
+    display: flex;
+    flex-direction: column; /* Stack list items vertically */
+    align-items: center; /* Center align list items horizontally */
+  }
+  
+  .off-screen-menu ul li {
+    margin: 10px 0; /* Space between items */
+    width: 100%; /* Ensure buttons take full width */
+  }
+  
+  .off-screen-menu ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    background-color: #444; /* Background color for buttons */
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width of list item */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  .off-screen-menu ul li a:hover {
+    background-color: #555; /* Darker background on hover */
+  }
+  
+
+
+/* nav */
+nav {
+    padding: 1rem;
+    display: flex;
+
+}
+
+
+
+/* ham menu */
+.ham-menu {
+    top: 5%;
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+}
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: white;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
